@@ -23,6 +23,7 @@
 #include "esp_tls.h"
 #include "esp_ota_ops.h"
 #include <sys/param.h>
+#include "dht11.h"
 
 static const char *TAG = "mqtts_example";
 #define MQTT_BROKER "mqtts://c0116143ef0143149b4c43981ffead03.s1.eu.hivemq.cloud"
@@ -36,10 +37,6 @@ extern const uint8_t mqtt_eclipseprojects_io_pem_start[]   asm("_binary_mqtt_ecl
 #endif
 extern const uint8_t mqtt_eclipseprojects_io_pem_end[]   asm("_binary_mqtt_eclipseprojects_io_pem_end");
 
-//
-// Note: this function is for testing purposes only publishing part of the active partition
-//       (to be checked against the original binary)
-//
 static void send_binary(esp_mqtt_client_handle_t client)
 {
     esp_partition_mmap_handle_t out_handle;
@@ -143,7 +140,10 @@ static void mqtt_app_start(void)
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(client);
 }
-
+void delay(uint32_t time)
+{
+	vTaskDelay(time / portTICK_PERIOD_MS);
+}
 void app_main(void)
 {
     ESP_LOGI(TAG, "[APP] Startup..");
@@ -167,6 +167,9 @@ void app_main(void)
      * examples/protocols/README.md for more information about this function.
      */
     ESP_ERROR_CHECK(example_connect());
-
+    DHT11_init(GPIO_NUM_4);
+    printf("Temperature is %d \n", DHT11_read().temperature);
+    printf("Humidity is %d\n", DHT11_read().humidity);
+    delay(1000);
     mqtt_app_start();
 }
