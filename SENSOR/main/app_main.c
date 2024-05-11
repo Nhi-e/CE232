@@ -286,16 +286,18 @@ void mqtt_start(void *handler_args)
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(client);
     LastSendMQTT = esp_timer_get_time()/1000;
+    
     while(1)
 	{
 		if(esp_timer_get_time()/1000 - LastSendMQTT >= 1500)
 		{
-			if(mqtt_connect_status)
+            uint8_t temp = (uint8_t)DHT11_read().humidity;
+			if(mqtt_connect_status && temp > 0)
 			{
 				MQTT_DataJson();
 				esp_mqtt_client_publish(client, topic_pub, MQTT_BUFFER, 0, 1, 0);
 				ESP_LOGI(TAG2, "SEND MQTT %s", MQTT_BUFFER);
-				//delay(10000);		
+				delay(1000);		
 				taskYIELD();
 			}
 			
