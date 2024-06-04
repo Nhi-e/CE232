@@ -94,28 +94,21 @@ struct dht11_reading DHT11_read() {
     if(esp_timer_get_time() - 2000000 < last_read_time) {
         return last_read;
     }
-
     last_read_time = esp_timer_get_time();
-
     uint8_t data[5] = {0,0,0,0,0};
-
     _sendStartSignal();
-
     if(_checkResponse() == DHT11_TIMEOUT_ERROR)
         return last_read = _timeoutError();
-    
     /* Read response */
     for(int i = 0; i < 40; i++) {
         /* Initial data */
         if(_waitOrTimeout(50, 0) == DHT11_TIMEOUT_ERROR)
-            return last_read = _timeoutError();
-                
+            return last_read = _timeoutError();      
         if(_waitOrTimeout(70, 1) > 28) {
             /* Bit received was a 1 */
             data[i/8] |= (1 << (7-(i%8)));
         }
     }
-
     if(_checkCRC(data) != DHT11_CRC_ERROR) {
         last_read.status = DHT11_OK;
         last_read.temperature = data[2];
