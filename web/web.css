@@ -11,7 +11,7 @@
         display: flex;
         flex-direction: row;
         padding: 28px 23px 28px 28px;
-        width: 2000px;
+        width: 1440px;
         box-sizing: border-box;
     }
     /*Khung bên trái chứa thông tin user*/
@@ -20,42 +20,35 @@
         border-radius: 20px;
         background: #ffffff;
         position: relative;
-        margin-right: 54px;
+        margin-right: 100px;
         margin-top: 10px;
-        width: 280px;
-        height: 650px;
-        overflow: hidden;
-    }
-    /*khung bên phải chứa thông tin của member*/
-    .dashboard-home-screen .side-bar-right {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
-        background: #ff0000;
-        position: relative;
-        margin-right: 300px;
-        margin-top: 10px;
-        width: 280px;
+        width: 450px;
         height: 650px;
         overflow: hidden;
     }
     /*hình ảnh user*/
-    .dashboard-home-screen .sidebar-image {
-        width: 30%; /* Adjust this to control the image size */
+    .dashboard-home-screen .sidebar-logo {
+        width: 25%; /* Adjust this to control the image size */
         height: auto; /* Maintain aspect ratio */
-        margin-top: 15px;
+        margin-top: 30px;
         margin-left: -120px;
         margin-right: 20px;
+    }
+
+    .dashboard-home-screen .sidebar-image {
+        width: 100%; /* Adjust this to control the image size */
+        margin-left: 2px;
+        margin-top: 280px;
     }
 
     /*chữ trong khung side bar*/
     .dashboard-home-screen .text {
         position: relative;
         bottom: 20px;
-        left: 20px;
         color: #000000;
-        margin-top: -45px;
+        margin-top: -40px;
         text-align: left;
-        margin-left: 70px;
+        margin-left: 95px;
     }
 
     .dashboard-home-screen .Text1 {
@@ -81,16 +74,15 @@
     }
     /* Khung chua tat ca cac bieu do va thiet bi */
     .dashboard-home-screen .content{
-        margin: 45px 38px 276px 0;
+        margin: 18px 38px 276px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 1060px;
+        width: 1000px;
         box-sizing: border-box;
-        
     }
 
-    /* Khung chua sensor cua nhi */
+    /* Khung chứa Sensor */
     .dashboard-home-screen .upper-content{
         margin-bottom: 50px;
         display: flex;
@@ -114,10 +106,10 @@
     .dashboard-home-screen .upper-chart-container{
         display: flex;
         flex-direction: row;
-        width: 705px;
+        width: 790px;
         height: 100px;
         justify-content: space-between;
-        box-sizing: border-box;    
+        box-sizing: border-box;   
     }
 
     /* Bien do humidity */
@@ -125,10 +117,9 @@
         background-color: rgb(255, 255, 255);
         box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); 
         padding-bottom: 20px;
-        width: 320px; 
+        width: 370px; 
         height: 220px;
         border-radius: 20px;
-        margin: 20px 0;
         color: #639aff;
         margin-top: -15px;
     }
@@ -138,10 +129,9 @@
         background-color: rgb(255, 255, 255); 
         box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); 
         padding-bottom: 20px;
-        width: 320px; 
+        width: 370px; 
         height: 220px;
         border-radius: 20px;
-        margin: 20px 0;
         color: #B10F2E;
         margin-top: -15px;
     }
@@ -149,55 +139,56 @@
     .dashboard-home-screen .timestamp { 
         color: #bebebe; 
         font-size: 1rem;
-        margin-top: -10px;
+        margin-top: -15px;
     }
     /*chữ trên cảm biến*/
     .dashboard-home-screen .card-title{ 
         font-size: 23px; 
         font-weight : bold;
-        margin-top: 15px;
+        margin-top: 10px;
     }
     .dashboard-home-screen .reading { 
         font-size: 1.8rem;
         margin-left: 50px;
       }
     /********************** Device container **********************/
-    /* khung chua cac thiet bi o ben duoi */
+    /* Điều chỉnh vị trí các Devices */
     .dashboard-home-screen .lower-device-container{
         display: flex;
-        padding: 0px 20px 0px 20px;
+        
+        position: left;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        width: 685px;
+        width:790px;
         box-sizing: border-box;
-        margin-left: -300px;
+        margin-left: -280px;
     }
     /* Container chứa title LEVELS */
     .dashboard-home-screen .upper-title-container{
-        margin: 0 7.5px 12px 0;
+        margin: 0 70px 20px 0;
         display: flex;
         position: left;
         flex-direction: column;
         justify-content: space-between;
-        width: 1060px;
+        width: 1000px;
         box-sizing: border-box;
     }
 
     /* Container chua title DEVICES */
     .dashboard-home-screen .lower-title-container{
-        margin: 0 7.5px 12px 0;
+        margin: 20px 70px 20px 0;
         display: flex;
         position: left;
         flex-direction: column;
         justify-content: space-between;
-        width: 1060px;
+        width: 990px;
         box-sizing: border-box;
     }
 
     /* style của chữ DEVICES */
     .dashboard-home-screen .lower-title-font{
-        margin-top: 105px;
+        margin-top: 90px;
         width: 80px;
         position: relative;
         overflow-wrap: break-word;
@@ -219,7 +210,7 @@
     }
     /*Khung chứa thông tin các thiết bị */
     .dashboard-home-screen .devices {
-        padding-top: 20px;
+        padding-top: 10px;
         padding-bottom: 20px;
         padding-left: 20px;
         padding-right: 20px;
@@ -230,32 +221,21 @@
         flex-direction: column;
         align-items: center;
         background-color: #ffffff;
-        width: 200px;
+        width: 180px;
         height: 150px;
         box-sizing: border-box;
-        margin-left: -57px;
     }
     /*tên thiết bị*/
     .dashboard-home-screen .device-name {
-        color: rgb(0, 0, 0);
-        padding-top: 6px;
-        font-size: 18Px;
-        height: 29px;
-        width: 180px;
+        color: #9a4ddd;
+        font-weight: bold; 
+        text-shadow: -1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff;
+        padding-top: 10px;
+        font-size: 22px;
         border: none;
         cursor: pointer;
-        margin-right: 100px;
-    }
-
-    .dashboard-home-screen .LED-name {
-        color: rgb(0, 0, 0);
-        padding-top: 65px;
-        font-size: 18Px;
-        height: 29px;
-        width: 180px;
-        border: none;
-        cursor: pointer;
-        margin-right: 100px;
+        align-self: flex-start; /* Đảm bảo chữ được căn trái trong container */
+        margin-left: 38px;
     }
 
     /* Trạng thái ON/OFF của các device */
@@ -263,19 +243,26 @@
         position: absolute;
         font-family: 'Montserrat', sans-serif;
         color: #5C5C5C;
-        top: 10px;
+        top: -1px;
         padding: 10px; /* Thêm padding để tạo khoảng cách từ mép */
-        font-size: 18px; 
+        font-size: 19px; 
     }
 
     .dashboard-home-screen .device-image {
         margin-right: 100px; /* Space between the image and the text */
         margin-top: 30px;
+        
     }
     .dashboard-home-screen .led-image {
         margin-right: 100px; /* Space between the image and the text */
         margin-top: -5px;
     }
+
+    /********************** lower-bar *************************/
+
+    /***********************************************************/
+
+    /********************** nút toggle *************************/
     .dashboard-home-screen .toggle-container{
         margin-top: -210px;
         display: flex;
@@ -284,9 +271,7 @@
         width: 170px;
         box-sizing: border-box;
     }
-    /***********************************************************/
 
-    /********************** nút toggle *************************/
     /* Nút nhấn đảo trạng thái */
     .toggle-container .toggle {
         position: relative;
@@ -297,7 +282,7 @@
         cursor: pointer;
         border-radius: 10px;
         transition: 0.5s;
-        margin-left: 130px;
+        margin-left: 120px;
     }
 
     .toggle .indicator{
@@ -317,11 +302,12 @@
     }
 
     .devices.active {
-    background-color:#d7e7ff;
+    background-color:#e5d7ff;
+
     }
 
     .toggle.active {
-    background-color: #3E7EF7;
+        background: linear-gradient(to left, #1f57ff, #8ecaff);
     } 
     /**********************************************************************/
 
@@ -329,7 +315,6 @@
 
     .dashboard-home-screen .device-status-container{
         border-radius: 12px;
-
         position: relative;
         /* margin: 0 70px 16px 0; */
         display: flex;
@@ -348,13 +333,14 @@
         width: 180px;
     }
 
+    /*khung dùng để chọn phòng*/
     .dropdown-button {
         margin-left: 70px;
-        margin-top: 93px;
+        margin-top: 102px;
         padding: 4px;
         font-size: 20px;
         height: 30px;
-        width: 110px;
+        width: 90px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -366,12 +352,13 @@
     position: absolute;
     flex-direction: column;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 120px;
     width: 180px;
     height: 60px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px;
+    font-size: 20px;
     }
 
     .room {
@@ -381,16 +368,15 @@
         padding: 2px 2px 2px 2px;
         border-radius: 5px;
         background-color: white;
-        border: none;
-        
+        border: none;        
     }
 
     .dropdown:hover .dropdown-content{
-    display: flex;
+        display: flex;
     }
 
     .dropdown:hover .dropdown-button{
-    background-color: #3C80F7;
+        background-color: #3C80F7;
     }
 
     .dropdown-content .room:hover {background-color: #b3b3b3;}
@@ -429,29 +415,20 @@
     }
     /****************************** DOOR **********************************/
 
-
-
-    /**********************************************************************/
-
-
-    /**********************************************************************/
     /* Thêm các line break nằm dọc */
     .dashboard-home-screen .line-break-vertical{
         background: #0504043b;
-        margin-right: -300px;
+        margin-right: -100px;
         position: static;
-        width: 1px;
-        height: 650px;
     }
 
     /* Side bar bên phải để hiển thị danh sách các thành viên */
     .dashboard-home-screen .member-side-bar{
-        margin-right: 100px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 265px;
         box-sizing: border-box;
+        margin-top: -20px;
     }
 
     /* Container chứa các element biểu hiện danh sách thành viên */
@@ -459,22 +436,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 265px;
+    width: 0px;
     box-sizing: border-box;
     }
 
     /* Container biểu thi title của danh sách */
     .dashboard-home-screen .member-title-container{
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 265px;
+    width: 290px;
     box-sizing: border-box;
+    margin-left: -60px;
     }
-
+    /*style chữ MEMBERS*/
     .dashboard-home-screen .member{
-    margin-right: 12px;
     width: 180px;
     overflow-wrap: break-word;
     font-family: 'Chivo';
@@ -482,7 +459,7 @@
     font-size: 20px;
     color: #000000;
     }
-
+    /*Style chữ View All*/
     .dashboard-home-screen .view-all{
     overflow-wrap: break-word;
     font-family: 'Chivo';
@@ -491,18 +468,48 @@
     color: #3C80F7;
     }
 
-    /* Khung màu trắng đằng sau Danh sách các thành viên */
+    /*Khung chứa member*/
     .dashboard-home-screen .member-card{
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
     border-radius: 24px;
-    background: #FFFFFF;
+    background: #ffffff;
     position: relative;
     margin-right: 1px;
-    width: 264px;
+    width: 240px;
     height: 352px;
     }
-
-    /* container chứa các thành viên */
+    /*avatar cho member*/
+    .dashboard-home-screen .member-side-bar .member-image {
+        width: 40px; 
+        height: 40px; 
+        border-radius: 50%; 
+        object-fit: cover; 
+        border: 2px solid #9b9b9b; 
+        margin-top: 30px;
+        margin-right: 170px;
+    }
+    /*thông tin member (Tên + MSSV) */
+    .dashboard-home-screen .member-side-bar .member-text {
+        position: relative;
+        bottom: 5px;
+        color: #000000;
+        margin-top: -42px;
+        text-align: left;
+        margin-left: 65px;
+    }
+    .dashboard-home-screen .member-side-bar .Name {
+        margin: 0px;
+        font-size: 17px;
+        font-weight: bold; 
+        margin-bottom: 5px;
+        color:  #3C80F7;
+    }
+    
+    .dashboard-home-screen .member-side-bar .MSSV {
+        margin: 0;
+        font-size: 15px; /* Font size for message */
+    }
+    /*container chứa các thành viên */
     .dashboard-home-screen .member-frame{
     position: absolute;
     left: 24px;
