@@ -1,0 +1,6 @@
+# This file was generated using idf.py save-defconfig. It can be edited manually.
+# Espressif IoT Development Framework (ESP-IDF) 5.2.1 Project Minimal Configuration
+#
+CONFIG_BROKER_URI="mqtts://mqtt.hivemq.com"
+CONFIG_EXAMPLE_WIFI_SSID="phuongnhi"
+CONFIG_EXAMPLE_WIFI_PASSWORD="09032003"
