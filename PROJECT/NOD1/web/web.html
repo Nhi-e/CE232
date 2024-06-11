@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SMARTHOME DASHBOARD</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous" />
+    <link rel="icon" href="data:," />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"
+      type="text/javascript"></script>
+    <link rel="styleSheet" href="web.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-home-screen">
+      <div class="side-bar-left">
+        <img src="pic\logo.png" alt="Image Description" class="sidebar-logo">
+        <div class="text">
+          <p class="Text1">Hello</span></p>
+          <p class="Text2">Welcome home!</p>
+
+        </div>
+        <div class="menu-bar">
+          <p class="setting">Menu</p>
+          
+          <img src="pic\home.png" alt="Menu Image" class="menu-image">
+          <div class="menu-text">Home</div>
+          <img src="pic\mess.png" alt="Menu Image" class="menu-image">
+          <div class="menu-text">Message</div>
+          <p class="setting">Setting</p>
+          <img src="pic\profile.png" alt="Menu Image" class="menu-image">
+          <div class="menu-text">Profile</div>
+          <img src="pic\contact.png" alt="Menu Image" class="menu-image">
+          <div class="menu-text">Contact</div>
+          <img src="pic\logout.png" alt="Menu Image" class="menu-image">
+          <div class="menu-text">Logout</div>
+        </div>
+        <img src="pic\smarthome.png" alt="Image Description"
+          class="sidebar-image">
+        
+      </div>
+
+      <div class="main-screen">
+        <div class="content">
+          <div class="upper-content">
+            <div class="upper-title-container">
+              <div class="upper-title-font">Levels</div>
+            </div>
+
+            <div class="upper-chart-container">
+              <div class="upper-chart-temperature">
+                <p class="card-title"><i class="fas fa-thermometer-half"></i>TEMPERATURE
+                  <span class="reading"><span id="Temperature"></span>
+                    <span>&deg;C</span>
+                  </p>
+
+                  <p class="timestamp">Last Reading: <span
+                      id="timetemp"></span></p>
+
+                  <canvas id="temperatureChart" width="170" height="70"></canvas>
+              </div>
+
+                <div class="upper-chart-humidity">
+                  <p class="card-title"><i class="fas fa-tint"></i> HUMIDITY
+                    <span class="reading"><span id="Humidity"></span>
+                      <span>&percnt;</span>
+                    </p>
+                    <p class="timestamp">Last Reading: <span
+                        id="timehum"></span></p>
+
+                    <canvas id="humidityChart" width="170" height="70"></canvas>
+                  </div>
+              </div>
+              </div>
+
+              <div class="lower-content">
+                <div class="lower-title-container">
+                  <div class="lower-title-font">Devices</div>
+                </div>
+
+                <div class="lower-device-container">
+                  <div class="devices" id="FAN" onclick="showFanControlPanel()">
+                    <div class="device-status-container">
+                      <div class="device-image"> <img src="pic\fan.png"
+                          alt="door"
+                          width="60px" height="60px"></div>
+                      <div class="device-name"> FAN </div>
+
+                    </div>
+                    <div class="toggle-container">
+                      <span class="device-title">OFF</span>
+                      <div class="toggle" onclick="toggleSwitch(this,FAN)">
+                        <div class="indicator"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="devices" id="DOOR">
+                    <div class="device-status-container">
+
+                      <div class="device-image"> <img src="pic\door.png"
+                          alt="door"
+                          width="60px" height="60px"></div>
+                      <div class="device-name"> DOOR </div>
+                    </div>
+                    <div class="toggle-container">
+                      <span class="device-title">OFF</span>
+                      <div class="toggle" id="door-state-button" onclick="toggleSwitch(this,'DOOR')">
+                        <div class="indicator"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sensor-devices" id="SERSOR">
+                    <div class="device-status-container">
+
+                      <div class="device-image"> <img src="pic\sensor.png"alt="door" width="60px" height="60px"></div>
+                      <div class="device-name"> SENSOR </div>
+                    </div>
+                    <div class="toggle-container">
+                      <span class="device-title">ON</span>
+                    </div>
+                  </div>
+
+                  <div class="devices" id="LED">
+                    <div class="device-status-container">
+                      <div class="dropdown">
+                        <button class="dropdown-button" id="dropdown-button-room" onclick="toggleDropdown()">Room</button>
+                        <div class="dropdown-content" id="dropdown-content-room">
+                            <button class="room" id="bedroom-btn" onclick="toggleDropdown()">Bedroom</button>
+                            <button class="room" id="living-room-btn" onclick="toggleDropdown()">Livingroom</button>
+                        </div>
+                      </div>
+                      <div class="led-image"> <img src="pic\led.png" alt="led" width="60px" height="60px"></div>
+                      <div class="device-name"> LED </div>
+                      <!-- thêm một thẻ chứa trạng thái đèn và nút nhấn đổi chế độ của led -->
+                      <div class="Led-control-panel" id="Led-control-panel"> 
+                        
+                        <div id="button-status-container ">
+                          <div class="button-state-toggle" id="led-state-button"
+                            onclick="toggleStatButton(this)">
+                            <div class="button-state-indicator"></div>
+                          </div>
+                          
+                          <img src="pic\LEDLEVEL0.png" alt="Image Off" id="imageoff" class="led-control-image">
+                          <img src="pic\LEDLEVEL1.png" alt="Image On" id="imageon" class="hidden">
+                        </div>
+                        <div id="light-container"></div>
+
+                        <div id="status-container">
+                          <div id="status" class="status">Status:</div>
+                          <div id="mode" class="status">Mode:</div>
+                        </div>
+
+                        <div id="button-mode-container">
+                          <div class="button-mode" id="mode1" onclick="toggleMode(id)"> MODE 1</div>
+                          <div class="button-mode" id="mode2" onclick="toggleMode(id)"> MODE 2</div>
+                          <div class="button-mode" id="mode3" onclick="toggleMode(id)"> MODE 3</div>
+                          <img src="pic\LEDLEVEL1.png" alt="Image 1" id="image1" class="hidden">
+                          <img src="pic\LEDLEVEL2.png" alt="Image 2" id="image2" class="hidden">
+                          <img src="pic\LEDLEVEL3.png" alt="Image 3" id="image3" class="hidden">
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="control-title-container"id="Show-panel" >
+                  <div class="control-title-font">Control Panel</div>
+                  <div class="control-container">
+                    <div class ="control-panel">
+                      <div class="slider-title">Speed</div>     
+                      <div class ="Fan-control-panel">
+                        <div class="fan-slider">
+                          <label for="range"> </label>
+                          <input type="range" min="0" max="100" value="0" id="range" class="slider">
+                          <div id="slider-value">0</div>
+                        </div>
+                      </div>       
+                    </div>
+                  </div>
+                  <div class="timer-container">
+                    <span class="timer-title">Start Time</span>
+                    <input type="number" id="hour-input" min="0" max="23" value="0">
+                    <span>:</span>
+                    <input type="number" id="minute-input" min="0" max="59" value="0">
+                    <span>:</span>
+                    <input type="number" id="second-input" min="0" max="59" value="0">
+
+                    
+                  </div>
+                  <div class="timer-container">
+                    <span class="timer-title">Duration</span>
+                    <input type="number" id="hour-duration" min="0" max="23" value="0">
+                    <span>:</span>
+                    <input type="number" id="minute-duration" min="0" max="59" value="0">
+                    <span>:</span>
+                    <input type="number" id="second-duration" min="0" max="59" value="0">
+                  </div>
+                  <div class="timer-container">
+                    <span class="timer-title">Speed</span>
+                    <input type="number" id="speed-input" min="0" max="100" value="0">
+                    
+                    <button id="set-timer">Set</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="line-break-vertical"></div>
+
+            <div class="member-side-bar">
+              
+              <div class="member-container">
+                <div class="member-title-container">
+                  <span class="member">Members</span>
+                  <span class="view-all">view all</span>
+                </div>
+
+                <div class="member-card">
+                  <img src="pic\avatar.jpg" alt="Member Image" class="member-image">
+                  <div class="member-text">
+                    <p class="Name">Lê Thị Phương Nhi</p>
+                    <p class="MSSV">MSSV: 21522426</p>
+                  </div>
+                  <img src="pic\avatar.jpg" alt="Member Image" class="member-image">
+                  <div class="member-text">
+                    <p class="Name">Võ Đông Thành</p>
+                    <p class="MSSV">MSSV: 21520457</p>
+                  </div>
+                  <img src="pic\avatar.jpg" alt="Member Image" class="member-image">
+                  <div class="member-text">
+                    <p class="Name">Mai Hoàng Gia Bảo</p>
+                    <p class="MSSV">MSSV: 21520152</p>
+                  </div>
+                  <img src="pic\avatar.jpg" alt="Member Image" class="member-image">
+                  <div class="member-text">
+                    <p class="Name">Cù Thanh Tường</p>
+                    <p class="MSSV">MSSV: 21522773</p>
+                  </div>
+                  <div class="member-frame"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </body>
+      <script src="mqtt-connection.js"></script>
+      <script src="web.js"></script>
+      <script src="led.js"></script>
+      <script src="door.js"></script>
+      <script src="fan.js"></script>
+    </html>

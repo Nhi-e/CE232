@@ -1,0 +1,815 @@
+    html {font-family: Arial; display: inline-block; text-align: center;}
+    h1 {  font-size: 2rem;}
+    body {  
+        margin: 0;
+        background-color: #E8F3FC; 
+    }
+
+    /* Khung màn hình chính  */
+    .dashboard-home-screen {
+    background-color: #E8F3FC;
+    display: flex;
+    flex-direction: row;
+    padding: 28px 23px 28px 28px;
+    width: 1440px;
+    box-sizing: border-box;
+    }
+    /*Khung bên trái chứa thông tin user*/
+    .dashboard-home-screen .side-bar-left {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background: #ffffff;
+    position: relative;
+    margin-right: 100px;
+    margin-top: 10px;
+    width: 450px;
+    height: 685px;
+    overflow: hidden;
+    }
+    /*hình ảnh user*/
+    .dashboard-home-screen .sidebar-logo {
+    width: 25%; 
+    height: auto; 
+    margin-top: 30px;
+    margin-left: -120px;
+    margin-right: 20px;
+    }
+
+    .dashboard-home-screen .sidebar-image {
+    width: 85%; /* Adjust this to control the image size */
+    margin-left: 2px;
+    margin-top: -15px;
+    }
+
+    /*chữ trong khung side bar*/
+    .dashboard-home-screen .text {
+    position: relative;
+    bottom: 20px;
+    color: #000000;
+    margin-top: -40px;
+    text-align: left;
+    margin-left: 95px;
+    }
+
+    .dashboard-home-screen .Text1 {
+    margin: 0px;
+    font-size: 25px;
+    font-weight: bold; 
+    margin-bottom: 5px;
+    font-family: Chivo;
+    }
+
+    .dashboard-home-screen .Text2 {
+    font-family: Chivo;
+    margin: 0;
+    font-size: 19px; /* Font size for message */
+    }
+
+    .dashboard-home-screen .setting {
+    margin: 20px;
+    font-size: 20px; /* Font size for message */
+    font-family: Chivo;
+    color: #405D9F;
+    text-align: left;
+    margin-left: 15px;
+    margin-top: -5px;
+    }
+
+    .dashboard-home-screen .menu-bar {
+    margin-left: 15px;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    }
+    .dashboard-home-screen .menu-image {
+    display: flex;
+    width: 26px; 
+    height: 26px; 
+    margin-top: -5px;
+    margin-left: 15px;
+    margin-bottom: 40px;
+    }
+    .dashboard-home-screen .menu-text {
+    font-size: 17px;
+    display: flex;
+    color:  #6C7894;
+    margin-top: -62px;
+    margin-left: 60px;
+    padding-bottom: 28px;
+    }
+
+    /* Khung chua content va member */
+    .dashboard-home-screen .main-screen{
+    margin: 28px 0 29px 0;
+    display: flex;
+    flex-direction: row;
+    width: 1900px;
+    height: fit-content;
+    box-sizing: border-box;
+
+    }
+    /* Khung chua tat ca cac bieu do va thiet bi */
+    .dashboard-home-screen .content{
+    margin: 18px 38px 276px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+    box-sizing: border-box;
+    }
+
+    /* Khung chứa Sensor */
+    .dashboard-home-screen .upper-content{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 300x;
+    box-sizing: border-box;
+
+    }
+
+    /* Khung chua cac thiet bi o duoi */
+    .dashboard-home-screen .lower-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    box-sizing: border-box;
+    }
+
+    /* Khung chua hai bieu do humid va temperature */
+    .dashboard-home-screen .upper-chart-container{
+    display: flex;
+    flex-direction: row;
+    width: 790px;
+    height: 80px;
+    justify-content: space-between;
+    box-sizing: border-box;   
+    }
+
+    /* Bien do humidity */
+    .dashboard-home-screen .upper-chart-humidity{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); 
+    padding-bottom: 20px;
+    width: 370px; 
+    height: 210px;
+    border-radius: 20px;
+    color: #639aff;
+    margin-top: -15px;
+    }
+
+    /* bieu do temperature */
+    .dashboard-home-screen .upper-chart-temperature{
+        background-color: rgb(255, 255, 255); 
+        box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); 
+        padding-bottom: 20px;
+        width: 370px; 
+        height: 210px;
+        border-radius: 20px;
+        color: #B10F2E;
+        margin-top: -15px;
+    }
+    /*chữ thể hiện thời gian đọc cảm biến*/
+    .dashboard-home-screen .timestamp { 
+        color: #bebebe; 
+        font-size: 1rem;
+        margin-top: -15px;
+    }
+    /*chữ trên cảm biến*/
+    .dashboard-home-screen .card-title{ 
+    font-size: 23px; 
+    font-weight : bold;
+    margin-top: 10px;
+    }
+    .dashboard-home-screen .reading { 
+    font-size: 1.8rem;
+    margin-left: 50px;
+    }
+    /********************** Device container **********************/
+    /* Điều chỉnh vị trí các Devices */
+    .dashboard-home-screen .lower-device-container{
+    display: flex;
+
+    position: left;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width:790px;
+    box-sizing: border-box;
+    margin-left: -280px;
+    }
+    /* Container chứa title LEVELS */
+    .dashboard-home-screen .upper-title-container{
+    margin: 0 70px 20px 0;
+    display: flex;
+    position: left;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1000px;
+    box-sizing: border-box;
+    }
+
+    /* Container chua title DEVICES */
+    .dashboard-home-screen .lower-title-container{
+    margin: 20px 70px 20px 0;
+    display: flex;
+    position: left;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 990px;
+    box-sizing: border-box;
+    }
+
+    /* style của chữ DEVICES */
+    .dashboard-home-screen .lower-title-font{
+    margin-top: 90px;
+    width: 80px;
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Chivo';
+    font-weight: 400;
+    font-size: 24px;
+    color: #2B2B2B;
+    }
+    /* style của chữ LEVELS */
+    .dashboard-home-screen .upper-title-font{
+    margin-top: -40px;
+    width: 70px;
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Chivo';
+    font-weight: 400;
+    font-size: 24px;
+    color: #2B2B2B;
+    }
+
+    /*Khung chứa thông tin các thiết bị */
+    .dashboard-home-screen .devices {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 180px;
+    height: 140px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    }
+    .dashboard-home-screen .sensor-devices {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e5d7ff;
+    width: 180px;
+    height: 140px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    }
+    /*tên thiết bị*/
+    .dashboard-home-screen .device-name {
+    color: #9a4ddd;
+    font-weight: bold; 
+    text-shadow: -1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff;
+    padding-top: 5px;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start; /* Đảm bảo chữ được căn trái trong container */
+    margin-left: 38px;
+    }
+
+    /* Trạng thái ON/OFF của các device */
+    .dashboard-home-screen .device-title {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    color: #5C5C5C;
+    top: -1px;
+    padding: 10px; /* Thêm padding để tạo khoảng cách từ mép */
+    font-size: 19px; 
+    }
+
+    .dashboard-home-screen .device-image {
+    margin-right: 100px; /* Space between the image and the text */
+    margin-top: 28px;
+
+    }
+    .dashboard-home-screen .led-image {
+    margin-right: 100px; /* Space between the image and the text */
+    margin-top: -3px;
+    }
+
+    /**********************CONTROL PANEL*************************/
+
+    /* Container chua title CONTROL PANEL */
+    .dashboard-home-screen .control-title-container{
+        margin: 20px 70px 20px 0;
+        display: none;
+        position: left;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 990px;
+        box-sizing: border-box;
+    }
+
+    /* style của chữ DEVICES */
+    .dashboard-home-screen .control-title-font{
+
+    width: 140px;
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Chivo';
+    font-weight: 400;
+    font-size: 24px;
+    color: #2B2B2B;
+    }
+
+    .dashboard-home-screen .control-container{
+    display: flex;
+    position: left;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    width:300px;
+    box-sizing: border-box;
+    margin-left: 0px;
+    }
+        /********************** PHẦN CONTROL QUẠT*************************/
+    .dashboard-home-screen .control-panel {
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        background-color:#e5d7ff;
+        width: 785px;
+        height: 200px;
+        margin-top: 20px;
+    }
+
+    .dashboard-home-screen .Fan-control-panel {
+        border-radius: 20px;
+        display: flex;
+        width: 385px;
+        height: 200px;
+        
+    }
+    /*Control Slider*/
+    .dashboard-home-screen .fan-slider {
+        width: 100%;
+        margin-top: -0px;
+        margin-left: 50px;
+    }
+    .dashboard-home-screen .fan-image {
+        display: flex;
+        position: relative;
+        margin-right: 90px; /* Space between the image and the text */
+        margin-top: -15px;
+    }
+    .dashboard-home-screen .slider {
+        -webkit-appearance: none;
+        width: 70%;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        margin-left: -50px;
+        margin-top: 40px;
+    }
+    /*Chữ Speed*/
+    .dashboard-home-screen .slider-title {
+        position: absolute;
+        display: flex;
+        font-family: 'Montserrat', sans-serif;
+        color: #5C5C5C;
+        padding: 10px;
+        margin-top: -160px;
+        margin-left: 70px;
+        font-size: 18px;
+    }
+    /*giá trị của thanh slider*/
+    .dashboard-home-screen #slider-value {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: -18px;
+        margin-left: 220px; 
+        white-space: nowrap; 
+    }
+
+    /*Control timer*/
+    .dashboard-home-screen .timer-container {
+        display: flex;
+        flex-direction: row; /* Sắp xếp các phần tử theo cột */
+        align-items: flex-start;
+        gap: 5px; /* Khoảng cách giữa các phần tử */
+        width: 280px;
+        margin-left: 80px;
+        margin-top: 50px;
+        text-align: left;
+    }
+
+    .dashboard-home-screen  .timer-container input[type="number"] {
+        width: 30px; /* Điều chỉnh chiều rộng của các input number */
+        padding: 3px;
+        background-color: #ffffff; /* Màu nền xanh nhạt cho các input */
+        border: 1px solid #ffffff; /* Viền xám nhạt */
+        border-radius: 3px; /* Bo góc nhẹ */
+        color: #001c79; /* Màu chữ xanh đậm */
+        margin-top: -180px;
+        margin-bottom: 50px;
+        text-align: right;
+    }
+
+    .dashboard-home-screen  .timer-container .timer-title {
+        margin-right: 28px; /* Khoảng cách giữa tiêu đề và các input */
+        font-family: 'Montserrat', sans-serif;
+        color: #5C5C5C;
+        font-size: 18px;
+        margin-top: -180px;
+    }
+
+    .dashboard-home-screen  .timer-container button {
+        margin-left: 50px; /* Khoảng cách giữa input cuối cùng và nút */
+        margin-top: -180px;
+        width: 50px;
+    }
+
+    .dashboard-home-screen .timer-container span {
+    font-size: 10px; /* Điều chỉnh kích thước font của dấu hai chấm */
+    margin-top: -175px;
+    }
+    /********************** nút toggle *************************/
+    .dashboard-home-screen .toggle-container{
+    margin-top: -210px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 170px;
+    box-sizing: border-box;
+    }
+
+    /* Nút nhấn đảo trạng thái */
+    .toggle-container .toggle {
+    position: relative;
+    top: 30px;
+    width: 40px;
+    height: 18px;
+    background: #9a9999;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.5s;
+    margin-left: 120px;
+    }
+
+    .toggle .indicator{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    transform: scale(0.8);
+    transition: 0.5s;
+    }
+
+    .toggle.active .indicator {
+    left: 21.5px;
+    }
+
+    .devices.active {
+        background-color:#e5d7ff;
+    }
+
+    .toggle.active {
+    background: linear-gradient(to left, #1f57ff, #8ecaff);
+    } 
+    /**********************************************************************/
+
+    /******************************** LED *********************************/
+
+    .dashboard-home-screen .device-status-container{
+    border-radius: 12px;
+        position: relative;
+        margin-bottom: 10px;
+        /* margin: 0 70px 16px 0; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* padding: 12px 10px; */
+        width: 230px;
+        height: 170px;
+        box-sizing: border-box;
+    }
+    /*khung chứa phần điều khiển LED*/
+    .dashboard-home-screen .Led-control-panel {
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+        margin-top: 90px;
+        height: 170px;
+        width: 340px;
+        margin-left: -200px;
+        padding: 20px;
+        position: relative;
+    }
+    .dashboard-home-screen .led-control-image {
+        position: absolute;
+        margin: 0 auto; 
+        margin-top: -38px;
+        margin-left: -170px;
+        width: 180px; /* Điều chỉnh kích thước ảnh nếu cần */
+        height: auto; /* Giữ tỉ lệ ảnh */
+    }
+    .hidden {
+        display: none;
+    }
+    
+    .dashboard-home-screen .led-mode-image{
+        position: absolute;
+        margin: 0 auto; 
+        margin-top: -138px;
+        margin-left: -6px;
+        width: 180px; /* Điều chỉnh kích thước ảnh nếu cần */
+        height: auto; /* Giữ tỉ lệ ảnh */
+    }
+
+    .Led-control-panel.active {
+    background-color:#e5d7ff;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        height: 32px;
+        width: 180px;
+    }
+
+    /*khung dùng để chọn phòng*/
+    .dropdown-button {
+        padding: 4px;
+        font-size: 16px;
+        height: 30px;
+        width: 90px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        background-color: #f9f9f9;
+        min-width: 120px;
+        width: 180px;
+        height: 60px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+
+    .room {
+        width: 180px;
+        height: 30px;
+        justify-content: center;
+        padding: 2px 2px 2px 2px;
+        border-radius: 5px;
+        background-color: white;
+        border: none;        
+    }
+
+    .button-mode {
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 10px 10px 10px 10px;
+        font-size: 14px;
+        margin-right: 16px;
+        margin-left: 16px;
+        font-family: 'Montserrat', sans-serif;
+        color:  #3C80F7;
+        font-weight: bold; 
+        font-size: 15px;
+        margin-top: 6px;
+    }
+
+    .button-mode:hover, .button-mode:active{
+    background-color: #7babffaa;;
+    }
+
+    .dropdown-content {
+    display: none;
+    }
+
+    .dropdown-content.show {
+    display: block;
+    }
+
+
+    .dropdown:hover .dropdown-content{
+    display: flex;
+    }
+
+    .dropdown:hover .dropdown-button{
+    background-color: #3C80F7;
+    }
+
+    .dropdown-content .room:hover {background-color: #b3b3b3;}
+
+
+    #light-container,
+    #status-container {
+        margin-top: 1px;
+        display: none;
+        flex-direction: row;
+        align-content: space-between;
+    }
+    #button-status-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 170px;
+        box-sizing: border-box;
+    }
+    #button-mode-container{
+        position: relative;
+        display: flex  ;
+        margin-top: 10px;
+        align-content: space-between;
+    }
+
+    .button-state-toggle {
+        position: relative;
+        top: auto;
+        width: 40px;
+        height: 18px;
+        background: #9a9999;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 0.5s;
+        margin-left: 250px;
+    }
+
+    .button-state-toggle .button-state-indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background: white;
+        border-radius: 50%;
+        transform: scale(0.8);
+        transition: 0.5s;
+    }
+
+    .button-state-toggle.active .button-state-indicator{
+    left : 21.5px
+    }
+
+    .button-state-toggle.active {
+    background: linear-gradient(to left, #1f57ff, #8ecaff);
+    } 
+
+    .light {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-size: 50px;
+    }
+    .on {
+    background-image: url(".pic/light_on.jpg");
+    }
+    .status-container {
+    margin-top: 20px;
+    }
+    .status {
+        display: inline-block;
+        font-size: 19px;
+        margin: -10px 10px;
+    }
+    /****************************** DOOR **********************************/
+
+    /* Thêm các line break nằm dọc */
+    .dashboard-home-screen .line-break-vertical{
+    background: #0504043b;
+    margin-right: -100px;
+    position: static;
+    }
+
+    /* Side bar bên phải để hiển thị danh sách các thành viên */
+    .dashboard-home-screen .member-side-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: -20px;
+    }
+
+    /* Container chứa các element biểu hiện danh sách thành viên */
+    .dashboard-home-screen .member-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 0px;
+    box-sizing: border-box;
+    }
+
+    /* Container biểu thi title của danh sách */
+    .dashboard-home-screen .member-title-container{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 290px;
+    box-sizing: border-box;
+    margin-left: -60px;
+    }
+    /*style chữ MEMBERS*/
+    .dashboard-home-screen .member{
+    width: 180px;
+    overflow-wrap: break-word;
+    font-family: 'Chivo';
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    }
+    /*Style chữ View All*/
+    .dashboard-home-screen .view-all{
+    overflow-wrap: break-word;
+    font-family: 'Chivo';
+    font-weight: 400;
+    font-size: 20px;
+    color: #3C80F7;
+    }
+
+    /*Khung chứa member*/
+    .dashboard-home-screen .member-card{
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    background: #ffffff;
+    position: relative;
+    margin-right: 1px;
+    width: 240px;
+    height: 352px;
+    }
+    /*avatar cho member*/
+    .dashboard-home-screen .member-side-bar .member-image {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #9b9b9b; 
+    margin-top: 30px;
+    margin-right: 170px;
+    }
+    /*thông tin member (Tên + MSSV) */
+    .dashboard-home-screen .member-side-bar .member-text {
+    position: relative;
+    bottom: 5px;
+    color: #000000;
+    margin-top: -42px;
+    text-align: left;
+    margin-left: 65px;
+    }
+    .dashboard-home-screen .member-side-bar .Name {
+    margin: 0px;
+    font-size: 17px;
+    font-weight: bold; 
+    margin-bottom: 5px;
+    color:  #3C80F7;
+    }
+
+    .dashboard-home-screen .member-side-bar .MSSV {
+    margin: 0;
+    font-size: 15px; /* Font size for message */
+    }
+    /*container chứa các thành viên */
+    .dashboard-home-screen .member-frame{
+    position: absolute;
+    left: 24px;
+    top: 32px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    }
